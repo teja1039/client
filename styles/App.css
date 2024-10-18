@@ -8,6 +8,8 @@
 .App {
   width: 100vw;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
   --primary-color: #282828;
   --secondary-color: #075e54;
   display: flex;
