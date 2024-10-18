@@ -69,7 +69,6 @@ const MessageList: React.FC<MessageListProps> = ({
     if (!newMessageContent || newMessageContent === messageList[selectedMessageIndex].content) return;
 
     updateMessage({variables: {
-      userId: currentUserId,
       messageId: messageList[selectedMessageIndex].id,
       content: newMessageContent,
     }})

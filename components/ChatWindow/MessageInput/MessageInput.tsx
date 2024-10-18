@@ -19,17 +19,11 @@ const MessageInput: React.FC<MessageInputProps> = ({
 
   const handleClick = () => {
     if (!message) return;
-    const newMessage: Message = {
-      id: uuidv4(),
-      content: message,
-      sentTime: getCurrentTime(),
-    };
 
     addMessage({variables: {
       userId: currentUserId,
-      messageId: newMessage.id,
-      content: newMessage.content,
-      time: newMessage.sentTime
+      content: message,
+      time: getCurrentTime()
     }})
     scrollToBottom();
     setMessage("");

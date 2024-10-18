@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 
 const ADD_CONTACT = gql`
-  mutation AddContact($userId: ID!, $name: String!, $profileImgUrl: String) {
-    addUser(userId: $userId, name: $name, profileImgUrl: $profileImgUrl)
+  mutation AddContact($name: String!, $profileImgUrl: String) {
+    addUser(name: $name, profileImgUrl: $profileImgUrl)
   }
 `;
 
@@ -15,13 +15,11 @@ const DELETE_CONTACT = gql`
 const ADD_MESSAGE = gql`
   mutation addMessage(
     $userId: ID!
-    $messageId: ID!
     $content: String!
     $time: String!
   ) {
     addMessage(
       userId: $userId
-      messageId: $messageId
       content: $content
       time: $time
     )
@@ -35,8 +33,8 @@ const DELETE_MESSAGE = gql`
 `;
 
 const UPDATE_MESSAGE = gql`
-  mutation updateMessage($userId: ID!, $messageId: ID!, $content: String!) {
-    deleteMessage(userId: $userId, messageId: $messageId, content: $content)
+  mutation updateMessage($messageId: ID!, $content: String!) {
+    deleteMessage(messageId: $messageId, content: $content)
   }
 `;
 

@@ -23,7 +23,6 @@ const SideBar: React.FC<SideBarProps> = ({ isCompact, setIsCompact }) => {
     if (!userName) return;
 
     await addContact({variables: {
-      userId: userName + "_" + uuidv4(),
       name: userName
     }});
 
