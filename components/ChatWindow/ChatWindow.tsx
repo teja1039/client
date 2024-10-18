@@ -4,7 +4,8 @@ import React, { useCallback, useRef } from "react";
 import ChatWindowHeader from "./ChatWindowHeader/ChatWindowHeader";
 import { useCurrentUser } from "../ContextProviders/CurrentUserProvider";
 import { useMutation } from "@apollo/client";
-import { ADD_MESSAGE, GET_MESSAGES } from "../../graphQueries";
+import { GET_MESSAGES } from "@/graphql/queries";
+import { ADD_MESSAGE } from "@/graphql/mutations" 
 
 interface ChatWindowProps {
   isCompact: boolean;

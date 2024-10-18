@@ -3,7 +3,8 @@ import { ConfirmationModal, InputModal } from "../../Common/Modal/Modal";
 import { getCurrentTime } from "../../Common/util";
 import MessageItem from "./MessageItem/MessageItem";
 import { useMutation, useQuery } from "@apollo/client";
-import { DELETE_MESSAGE, GET_MESSAGES, UPDATE_MESSAGE } from "../../../graphQueries";
+import { GET_MESSAGES  } from "@/graphql/queries";
+import {DELETE_MESSAGE, UPDATE_MESSAGE} from "@/graphql/mutations"
 import { Message } from "../../Common/types/types";
 import { useCurrentUser } from "../../ContextProviders/CurrentUserProvider";
 

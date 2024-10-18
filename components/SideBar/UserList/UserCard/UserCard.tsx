@@ -1,7 +1,7 @@
 import UserProfile from "../../../Common/UserProfile/UserProfile";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { Contact, User } from "../../../Common/types/types";
-import React, { memo } from "react";
+import React from "react";
 
 function removeEditedPrefix(timeString ?: string) {
   if(!timeString) return '';

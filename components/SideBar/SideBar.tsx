@@ -4,9 +4,9 @@ import { InputModal } from "../Common/Modal/Modal";
 import { v4 as uuidv4 } from "uuid";
 import SideBarHeader from "./SideBarHeader/SideBarHeader";
 import NewUserButton from "./NewUserButton/NewUserButton";
-import { ADD_CONTACT, GET_CONTACTS } from "../../graphQueries";
+import { GET_CONTACTS } from "@/graphql/queries"
+import { ADD_CONTACT } from "@/graphql/mutations"
 import { useMutation } from "@apollo/client";
-import { ContactList } from "../Common/types/types";
 
 interface SideBarProps {
   isCompact: boolean;

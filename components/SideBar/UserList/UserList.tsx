@@ -9,7 +9,8 @@ import {
   useCurrentUserSetState,
 } from "../../ContextProviders/CurrentUserProvider";
 import { useMutation, useQuery } from "@apollo/client";
-import { DELETE_CONTACT, GET_CONTACTS } from "../../../graphQueries";
+import { GET_CONTACTS } from "@/graphql/queries";
+import { DELETE_CONTACT } from "@/graphql/mutations";
 
 interface UserListProps {
   isCompact: boolean;
