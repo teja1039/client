@@ -1,35 +1,23 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
+import { useAuth } from '@/components/ContextProviders/AuthContexProvider/AuthContext';
 
 const LoginPage = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [error, setError] = useState(null);
     const router = useRouter();
+    const {isAuthenticated ,login} = useAuth();
 
     const handleSubmit : (e:any) => void = async (e) => {
         e.preventDefault();
-
-        const res = await fetch('/api/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ email, password }),
-        });
-
-        if (res.ok) {
-            router.push('/main');
-        } else {
-            const { message } = await res.json();
-            setError(message);
-        }
+        login({email, password});
     };
+
+    if(isAuthenticated) router.push('/main');
 
     return (
         <div>
             <h1>Login</h1>
-            {error && <p style={{ color: 'red' }}>{error}</p>}
             <form onSubmit={handleSubmit}>
                 <div>
                     <label>Email:</label>
